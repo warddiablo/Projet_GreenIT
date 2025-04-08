@@ -89,25 +89,27 @@ const Users = [
 
 // Récupere les users pour les afficher dans le tableau de la page admin
 // les colonnes sont : Nom, Prénom, Email
-const userTable = document.getElementById('all_users_table');
+function displayUsers() {
+    const userTable = document.getElementById('all_users_table');
+    userTable.innerHTML = ''; // Clear the table before populating it
 
-Users.forEach(user => {
-    const row = document.createElement('tr');
-    const nameCell = document.createElement('td');
-    const firstNameCell = document.createElement('td');
-    const emailCell = document.createElement('td');
+    Users.forEach(user => {
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        const firstNameCell = document.createElement('td');
+        const emailCell = document.createElement('td');
 
-    nameCell.innerText = user.nom;
-    firstNameCell.innerText = user.prenom;
-    emailCell.innerText = user.email;
+        nameCell.innerText = user.nom;
+        firstNameCell.innerText = user.prenom;
+        emailCell.innerText = user.email;
 
-    row.appendChild(nameCell);
-    row.appendChild(firstNameCell);
-    row.appendChild(emailCell);
+        row.appendChild(nameCell);
+        row.appendChild(firstNameCell);
+        row.appendChild(emailCell);
 
-    userTable.appendChild(row);
-});
-
+        userTable.appendChild(row);
+    });
+}
 
 let selectedBrawler;
 let attemptedBrawlers = new Set();
