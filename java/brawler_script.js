@@ -80,6 +80,34 @@ const brawlers = [
     { name: "Willow", genre: "Féminin", rarete: "Mythique", categorie: "Contrôle", portee: "Longue", hypercharge: "Non", annee: 2023 },
 ];
 
+const Users = [
+    {nom: "Garnier", prenom: "Tristan", email: "tristan.garnier@gmail.com"},
+    {nom: "Porot", prenom: "Nicolas", email: "nicolas.porot@gmail.com"},
+    {nom: "GUÉNÉGAN", prenom: "Alexandre", email: "alexandre.guenegan@gmail.com"},
+    {nom: "SOAVE", prenom: "Raphaël", email: "raphael.soave@gmail.com"}
+]
+
+// Récupere les users pour les afficher dans le tableau de la page admin
+// les colonnes sont : Nom, Prénom, Email
+const userTable = document.getElementById('user_table');
+
+Users.forEach(user => {
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('td');
+    const firstNameCell = document.createElement('td');
+    const emailCell = document.createElement('td');
+
+    nameCell.innerText = user.nom;
+    firstNameCell.innerText = user.prenom;
+    emailCell.innerText = user.email;
+
+    row.appendChild(nameCell);
+    row.appendChild(firstNameCell);
+    row.appendChild(emailCell);
+
+    userTable.appendChild(row);
+});
+
 
 let selectedBrawler;
 let attemptedBrawlers = new Set();
