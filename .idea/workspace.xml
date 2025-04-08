@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eab19f33-787b-44a8-9323-24aa2f7533c8" name="Changes" comment="Ajout du script" />
+
+    <list default="true" id="eab19f33-787b-44a8-9323-24aa2f7533c8" name="Changes" comment="Ajout des images dans la database" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,14 +12,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-back" />
+
+        <entry key="$PROJECT_DIR$" value="database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
+
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+
   <component name="ProjectId" id="2vRkQ8a877GFc2wuQpxtjbykEAM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,7 +31,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev-front",
+
     "last_opened_file_path": "C:/Users/Nicolas/WebstormProjects/Projet_GreenIT",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -48,7 +53,6 @@
       <option name="presentableId" value="Default" />
       <updated>1744115254993</updated>
       <workItem from="1744115256032" duration="241000" />
-      <workItem from="1744115517480" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout des images dans la database">
       <option name="closed" value="true" />
@@ -58,15 +62,9 @@
       <option name="project" value="LOCAL" />
       <updated>1744115398596</updated>
     </task>
-    <task id="LOCAL-00002" summary="Ajout du script">
-      <option name="closed" value="true" />
-      <created>1744115579671</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1744115579671</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+
+    <option name="localTasksCounter" value="2" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,7 +72,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout des images dans la database" />
-    <MESSAGE value="Ajout du script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout du script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout des images dans la database" />
+
   </component>
 </project>
