@@ -160,7 +160,23 @@ p {
 .results_table th {
     background-color: #2a8fd9;
 }
+.all_users_table {
+    width: 100%;
+    table-layout: fixed;
+}
 
+.all_users_table th, .all_users_table td {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.all_users_table th {
+    background-color: #2a8fd9;
+}
 .correct {
     background-color: lightgreen;
 }
