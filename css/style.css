@@ -1,6 +1,7 @@
 body {
     background-image: url("../image/background_bs.png");
-    background-size: 2000px;
+    background-size: cover; /* Ajusté pour couvrir tout l'écran */
+    background-attachment: fixed; /* Empêche le déplacement de l'image */
     padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
