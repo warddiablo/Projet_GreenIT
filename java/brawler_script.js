@@ -121,7 +121,7 @@ function filterDropdown() {
     } else {
         dropdown.style.display = "block";
         brawlers.forEach(brawler => {
-            if (brawler.name.toLowerCase().startsWith(input)) {
+            if (!attemptedBrawlers.has(brawler.name.toLowerCase()) && brawler.name.toLowerCase().startsWith(input)) {
                 let item = document.createElement('div');
                 item.className = 'scroll_item';
 
