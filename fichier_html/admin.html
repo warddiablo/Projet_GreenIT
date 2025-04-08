@@ -14,20 +14,25 @@
         <nav>
             <a href="./accueil.html"><img src = "../image/logo_bs.png" alt = "Accueil" id = "accueil"> </a>
         </nav>
-        <div class="users">
+        <div class="users" >
             <table class="all_users_table">
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-                <tbody id="users_container">
-                <!-- Les Utilisateurs -->
-                </tbody>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody id="users_container">
+            <!-- Les Utilisateurs -->
+            </tbody>
             </table>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            displayUsers();
+            });
+        </script>
         <br/><br/><br/><br/>
         <footer>
             <p>©️2024 Nicolas POROT - Tristan MIARA</p>
