@@ -80,7 +80,7 @@ const brawlers = [
     { name: "Willow", genre: "Féminin", rarete: "Mythique", categorie: "Contrôle", portee: "Longue", hypercharge: "Non", annee: 2023 },
 ];
 
-const Users = [
+const users = [
     {nom: "Garnier", prenom: "Tristan", email: "tristan.garnier@gmail.com"},
     {nom: "Porot", prenom: "Nicolas", email: "nicolas.porot@gmail.com"},
     {nom: "GUÉNÉGAN", prenom: "Alexandre", email: "alexandre.guenegan@gmail.com"},
@@ -90,24 +90,15 @@ const Users = [
 // Récupere les users pour les afficher dans le tableau de la page admin
 // les colonnes sont : Nom, Prénom, Email
 function displayUsers() {
-    const userTable = document.getElementById('all_users_table');
-    userTable.innerHTML = ''; // Clear the table before populating it
-
-    Users.forEach(user => {
-        const row = document.createElement('tr');
-        const nameCell = document.createElement('td');
-        const firstNameCell = document.createElement('td');
-        const emailCell = document.createElement('td');
-
-        nameCell.innerText = user.nom;
-        firstNameCell.innerText = user.prenom;
-        emailCell.innerText = user.email;
-
-        row.appendChild(nameCell);
-        row.appendChild(firstNameCell);
-        row.appendChild(emailCell);
-
-        userTable.appendChild(row);
+    const usersContainer = document.getElementById("users_container");
+    users.forEach(user => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${user.nom}</td>
+            <td>${user.prenom}</td>
+            <td>${user.email}</td>
+        `;
+        usersContainer.appendChild(row);
     });
 }
 
@@ -121,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Selected Fichier Type:", currentGuessType); // Debug: Vérifiez le type du fichier sélectionné
     console.log("Selected Brawler:", selectedBrawler);  // Debug: Vérifiez le brawler sélectionné
 });
+
 
 function getRandomBrawler() {
     let random_brawler = brawlers[Math.floor(Math.random() * brawlers.length)];

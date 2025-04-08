@@ -4,7 +4,8 @@
         <title>Page Admin - Brawldle Stars</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel= "stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../java/brawler_script.js" defer></script> <!-- Inclure le fichier JavaScript -->
     </head>
     <body>
         
@@ -12,26 +13,26 @@
             Page ADMIN 
         </h2>
         <nav>
-            <a href="./accueil.html"><img src = "../image/logo_bs.png" alt = "Accueil" id = "accueil"> </a>
+            <a href="./accueil.html"><img src="../image/logo_bs.png" alt="Accueil" id="accueil"> </a>
         </nav>
-        <div class="users" >
+        <div class="users">
             <table class="all_users_table">
-            <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
-            </tr>
-            </thead>
-            <tbody id="users_container">
-            <!-- Les Utilisateurs -->
-            </tbody>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="users_container">
+                    <!-- Les Utilisateurs -->
+                </tbody>
             </table>
         </div>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-            displayUsers();
-            });
+            window.onload = function() {
+                displayUsers();
+            };
         </script>
         <br/><br/><br/><br/>
         <footer>
