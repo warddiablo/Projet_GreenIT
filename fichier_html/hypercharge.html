@@ -1,0 +1,48 @@
+<!DOCTYPE html> <!-- Version 5 de HTML-->
+<html lang="fr">
+    <head>
+        <title>Hypercharge - Brawldle Stars</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel= "stylesheet" href="../css/style.css">
+        <script src="../java/brawler_script.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="./accueil.html"><img src = "../image/logo_bs.png" alt = "Accueil" id = "accueil"> </a>
+        </header>
+        <nav class="games_nav">
+            <a href="brawler.html"><img src = "../image/button_brawler.png" alt = "bouton brawler" id = "button_brawler"></a>
+            <a href="skin.html"><img src = "../image/button_skin.png" alt = "bouton skin" id = "button_skin"></a>
+        </nav>
+        <div class="container">
+            <div class="presentation">
+                <h3>
+                    A qui appartient l'hypercharge ?
+                </h3>
+                    <img id="hypercharge_img" src="../image/hypercharge/Bull.png" alt="Hypercharge image">
+                <p>
+                    Tape n'importe quel brawler pour commencer.
+                </p>
+            </div>
+            <div class="search_container">
+                <input type="text" id="search_input" autocomplete="off" placeholder="Tape le nom d'un brawler..." oninput="filterDropdown()" onkeydown="handleKeydown(event)">
+                <button type="submit" id="submit_button" onclick="submitGuess()">➤</button>
+            </div>
+            <div class="scroll" id="scroll_menu">
+
+            </div>
+            <button id="recommencer_button" onclick="recommencer()" style="display:none;">Recommencer</button>
+            <div id="attempts"></div>
+        </div>
+        <div class="space"></div>
+        <footer>
+            <p>©️2024 Nicolas POROT - Tristan MIARA</p>
+            <p>Tous droits réservés.</p>
+            <nav>
+                <a href="./apropos.html">A propos de nous</a> |
+                <a href="https://supercell.com/en/games/brawlstars/">A propos du jeu</a>
+            </nav>
+        </footer>
+    </body>
+</html>
