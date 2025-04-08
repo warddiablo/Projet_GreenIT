@@ -89,7 +89,7 @@ const Users = [
 
 // Récupere les users pour les afficher dans le tableau de la page admin
 // les colonnes sont : Nom, Prénom, Email
-const userTable = document.getElementById('user_table');
+const userTable = document.getElementById('all_users_table');
 
 Users.forEach(user => {
     const row = document.createElement('tr');
