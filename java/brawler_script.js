@@ -127,7 +127,7 @@ function getRandomBrawler() {
     } else if (currentGuessType === "skin.html") {
         let brawler_skin = ["Bull", "Colt","Shelly", "Brock", "Buzz", "Djinn", "Dynamike", "El costo", "Fang", "Medor", "Poco", "Sam", "Surge"];
         random_brawler = brawler_skin[Math.floor(Math.random() * brawler_skin.length)];
-        document.getElementById('skin_img').src = `../image/skin/${random_brawler}.png`;
+        document.getElementById('skin_img').src = `https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/${random_brawler}.webp`;
         document.getElementById('skin_img').style.width = "50%";
         document.getElementById('skin_img').style.filter = 'blur(10px)';
         return random_brawler;
