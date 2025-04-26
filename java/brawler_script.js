@@ -149,7 +149,7 @@ function filterDropdown() {
                 item.className = 'scroll_item';
 
                 let img_brawler = document.createElement('img');
-                img_brawler.src = `../image/brawler/${brawler.name}.png`;
+                img_brawler.src = `../image/brawler/${brawler.name}.webp`;
                 img_brawler.alt = brawler.name; // Ajout d'un texte alternatif pour l'image
                 img_brawler.className = 'brawler_img'; // Ajout d'une classe CSS pour styliser l'image
 
