@@ -1,5 +1,5 @@
 body {
-    background-image: url("../image/background_bs.png");
+    background-image: url("https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/background_bs.png");
     background-size: cover; /* Ajusté pour couvrir tout l'écran */
     background-attachment: fixed; /* Empêche le déplacement de l'image */
     padding: 0;
