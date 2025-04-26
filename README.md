@@ -4,7 +4,7 @@
 - Nicolas Porot
 - Tristan Garnier
 - Alexandre GUÉNÉGAN
-- Raphaël SUAVE
+- Raphaël SOAVE
 
 # Description du projet :
 Ce projet a pour but d'optimiser un site web pour qu'il utilise le moins d'énergie possible.
