@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="eab19f33-787b-44a8-9323-24aa2f7533c8" name="Changes" comment="Ajout des images dans la database" />
-
+    <list default="true" id="eab19f33-787b-44a8-9323-24aa2f7533c8" name="Changes" comment="Ajout des images dans la database">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichier_html/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/fichier_html/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichier_html/apropos.html" beforeDir="false" afterPath="$PROJECT_DIR$/fichier_html/apropos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichier_html/brawler.html" beforeDir="false" afterPath="$PROJECT_DIR$/fichier_html/brawler.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichier_html/hypercharge.html" beforeDir="false" afterPath="$PROJECT_DIR$/fichier_html/hypercharge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichier_html/skin.html" beforeDir="false" afterPath="$PROJECT_DIR$/fichier_html/skin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,17 +21,14 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
         <entry key="$PROJECT_DIR$" value="database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
-
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2vRkQ8a877GFc2wuQpxtjbykEAM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,8 +37,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Nicolas/WebstormProjects/Projet_GreenIT",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -53,6 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744115254993</updated>
       <workItem from="1744115256032" duration="241000" />
+      <workItem from="1745674952656" duration="314000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout des images dans la database">
       <option name="closed" value="true" />
@@ -62,9 +72,7 @@
       <option name="project" value="LOCAL" />
       <updated>1744115398596</updated>
     </task>
-
     <option name="localTasksCounter" value="2" />
-
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,6 +81,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout des images dans la database" />
     <option name="LAST_COMMIT_MESSAGE" value="Ajout des images dans la database" />
-
   </component>
 </project>
