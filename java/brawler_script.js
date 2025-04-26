@@ -121,13 +121,13 @@ function getRandomBrawler() {
     } else if (currentGuessType === "hypercharge.html") {
         let brawler_hypercharge = ["Bull", "Colette", "Colt", "Corbac", "Dynamike", "Fang", "Jacky", "Jessie", "Lou", "Maisie", "Shelly", "Spike"];
         random_brawler = brawler_hypercharge[Math.floor(Math.random() * brawler_hypercharge.length)];
-        const random_brawler_url = `https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/${random_brawler}.webp`;
+        const random_brawler_url = `../image/hypercharge/${random_brawler}.webp`;
         document.getElementById('hypercharge_img').src = random_brawler_url;
         return random_brawler;
     } else if (currentGuessType === "skin.html") {
         let brawler_skin = ["Bull", "Colt","Shelly", "Brock", "Buzz", "Djinn", "Dynamike", "El costo", "Fang", "Medor", "Poco", "Sam", "Surge"];
         random_brawler = brawler_skin[Math.floor(Math.random() * brawler_skin.length)];
-        document.getElementById('skin_img').src = `https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/${random_brawler}.webp`;
+        document.getElementById('skin_img').src = `../image/skin/${random_brawler}.webp`;
         document.getElementById('skin_img').style.width = "50%";
         document.getElementById('skin_img').style.filter = 'blur(10px)';
         return random_brawler;
@@ -204,7 +204,7 @@ function submitGuess() {
         let img_brawler = document.createElement('img');
         let text_brawler = document.createElement('span');
         text_brawler.innerText = brawler.name;
-        img_brawler.src = `https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/brawler/${brawler.name}.png`;
+        img_brawler.src = `../image/brawler/${brawler.name}.webp`;
         img_brawler.alt = brawler.name; // Ajout d'un texte alternatif pour l'image
         img_brawler.className = 'brawler_img'; // Ajout d'une classe CSS pour styliser l'image
         nameCell.appendChild(img_brawler);
