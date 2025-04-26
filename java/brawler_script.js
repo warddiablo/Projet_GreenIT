@@ -204,7 +204,7 @@ function submitGuess() {
         let img_brawler = document.createElement('img');
         let text_brawler = document.createElement('span');
         text_brawler.innerText = brawler.name;
-        img_brawler.src = `https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/brawler/${brawler.name}.png`;
+        img_brawler.src = `../image/brawler/${brawler.name}.webp`;
         img_brawler.alt = brawler.name; // Ajout d'un texte alternatif pour l'image
         img_brawler.className = 'brawler_img'; // Ajout d'une classe CSS pour styliser l'image
         nameCell.appendChild(img_brawler);
