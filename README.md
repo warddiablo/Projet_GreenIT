@@ -1,4 +1,4 @@
-# Projet GreenIT : Brawldle
+# Projet GreenIT : Brawldle Star
 
 ### Équipe : 
 - Nicolas Porot
@@ -15,8 +15,7 @@ Nous avons décidé de faire une variante du worldle, sur un jeu : Brawl Star
 
 
 # Fonctionnalités du site :
-- Page d'acceuil, qui permet d'acceder au différentes partie du site
-- Page où l'on devine un brawler
-- Page où l'on devine un Hypercharge
-- Page où l'on devine un Skin
-
+- Page d'accueil, qui permet d'acceder au différentes partie du site
+- Page mini-jeu : devine un brawler
+- Page mini-jeu : devine un Hypercharge
+- Page mini-jeu : devine un Skin
