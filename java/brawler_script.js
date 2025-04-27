@@ -80,6 +80,159 @@ const brawlers = [
     { name: "Willow", genre: "Féminin", rarete: "Mythique", categorie: "controle", portee: "Longue", hypercharge: "Non", annee: 2023 },
 ];
 
+// Requete SQL pour insérer les brawlers dans la base de données
+/*
+Voici la table SQL pour insérer les brawlers dans la base de données
+CREATE TABLE Brawler(
+   Nom VARCHAR(50),
+   rarete VARCHAR(50),
+   genre VARCHAR(50),
+   categorie VARCHAR(50),
+   portee VARCHAR(50),
+   hypercharge_bool boolean,
+   annee SMALLINT,
+   PRIMARY KEY(Nom)
+);
+
+CREATE TABLE Hypercharge(
+   hypercharge_id INT(50),
+   link_github VARCHAR(120),
+   Nom VARCHAR(50) NOT NULL,
+   PRIMARY KEY(hypercharge_id),
+   UNIQUE(Nom),
+   FOREIGN KEY(Nom) REFERENCES Brawler(Nom)
+);
+
+CREATE TABLE Skin(
+   skin_id SMALLINT,
+   link_github VARCHAR(120),
+   Nom VARCHAR(50) NOT NULL,
+   PRIMARY KEY(skin_id),
+   UNIQUE(Nom),
+   FOREIGN KEY(Nom) REFERENCES Brawler(Nom)
+);
+
+
+--Insertions des brawlers dans la base de données
+
+INSERT INTO Brawler (Nom, rarete, genre, categorie, portee, hypercharge_bool, annee) VALUES
+('A.R.K.A.D', 'Inconnu', 'Inconnu', 'Degats bruts', 'Longue', 0, 2019),
+('Ambre', 'Légendaire', 'Féminin', 'Controle', 'Longue', 0, 2020),
+('Ash', 'Épique', 'Masculin', 'Tir d\'élite', 'Courte', 0, 2021),
+('Bartaba', 'Rare', 'Masculin', 'Artillerie', 'Longue', 0, 2018),
+('Bea', 'Épique', 'Féminin', 'Tir d\'élite', 'Longue', 0, 2019),
+('Belle', 'Épique', 'Féminin', 'Tir d\'élite', 'Longue', 1, 2021),
+('Billie', 'Épique', 'Féminin', 'Tank', 'Courte', 1, 2019),
+('Bo', 'Épique', 'Masculin', 'Controle', 'Longue', 0, 2018),
+('Bonnie', 'Épique', 'Féminin', 'Tir d\'élite', 'Longue', 0, 2022),
+('Brock','Rare','Masculin','Tir d\'élite','Longue','1','2018'),
+('Bull','Rare','Masculin','Tank','Courte','1','2018'),
+('Buster','Mythique','Masculin','Tank','Moyenne','0','2022'),
+('Buzz','Mythique','Masculin','Assassinat','Courte','1','2021'),
+('Byron','Mythique','Masculin','Soutien','Longue','0','2020'),
+('Carl','Super Rare','Masculin','Degats bruts','Longue','0','2019'),
+('Charlie','Mythique','Féminin','Controle','Longue','1' ,'2023'),
+('Chester' ,'Légendaire' ,'Masculin' ,'Degats bruts' ,'Moyenne' ,'0' ,'2022'),
+('Chuck' ,'Mythique' ,'Masculin' ,'Degats bruts' ,'Moyenne' ,'0' ,'2023'),
+('Colette' ,'Épique' ,'Féminin' ,'Degats bruts' ,'Longue' ,'1' ,'2020'),
+('Colt' ,'Rare' ,'Masculin' ,'Degats bruts' ,'Longue' ,'1' ,'2018'),
+('Corbac' ,'Légendaire' ,'Masculin' ,'Assassinat' ,'Longue' ,'1' ,'2017'),
+('Cordelius' ,'Légendaire' ,'Masculin' ,'Assassinat' ,'Moyenne' ,'1' ,'2023'),
+('Darryl' ,'Super Rare' ,'Masculin' ,'Tank' ,'Moyenne' ,'0' ,'2018'),
+('Doug' ,'Mythique' ,'Masculin' ,'Soutien' ,'Courte' ,'0' ,'2023'),
+('Draco' ,'Légendaire' ,'Masculin' ,'Tank' ,'Moyenne' ,'0' ,'2024'),
+('Dynamike','Super Rare','Masculin','Artillerie','Longue','1','2018'),
+('Edgar','Épique','Masculin','Assassinat','Courte','1','2020'),
+('El costo','Rare','Masculin','Tank','Courte','1','2018'),
+('Eliza' ,'Épique' ,'Féminin' ,'Controle' ,'Moyenne' ,'0' ,'2019'),
+('Eve' ,'Mythique' ,'Féminin' ,'Degats bruts' ,'Très longue' ,'0' ,'2022'),
+('Fang' ,'Mythique' ,'Masculin' ,'Assassinat' ,'Très longue' ,'1' ,'2022'),
+('Frank','Épique','Masculin','Tank','Courte','0','2018'),
+('Gael','Épique','Masculin','Controle','Longue','0','2020'),
+('Gray','Mythique','Masculin','Soutien','Longue','0','2022'),
+('Djinn' ,'Mythique' ,'Masculin' ,'Controle' ,'Longue' ,'1' ,'2019'),
+('Griff' ,'Épique' ,'Masculin' ,'Controle' ,'Longue' ,'0' ,'2021'),
+('Grom', 'Épique', 'Masculin', 'Artillerie', 'Longue', 0, 2021),
+('Gus', 'Super Rare', 'Masculin', 'Soutien', 'Très longue', 0, 2022),
+('Hank', 'Épique', 'Masculin', 'Tank', 'Courte', 0, 2023),
+('Jacky', 'Super Rare', 'Féminin', 'Tank', 'Courte', 1, 2020),
+('Janet', 'Mythique', 'Féminin', 'Tir d\'élite', 'Longue', 0, 2022),
+('Jessie', 'Rare', 'Féminin', 'Controle', 'Longue', 1, 2017),
+('Kit' , 'Légendaire' , 'Féminin' , 'Soutien' , 'Courte' , 0 , 2023),
+('LarryLawrie','Épique','Masculin','Artillerie','Longue','0','2024'),
+('Lily','Mythique','Féminin','Assassinat','Courte','0','2024'),
+('Leon','Légendaire','Masculin','Assassinat','Très longue','1','2018'),
+('Lola','Épique','Féminin','Dégâts bruts ','Longue ','0 ','2021'),
+('Lou ','Mythique ','Masculin ','controle ','Longue ','1 ','2020'),
+('Maisie ','Épique ','Féminin ','Tir d\'élite ','Longue ','1 ','2023'),
+('Mandy ','Épique ','Féminin ','Tir d\'élite ','Très longue ','0 ','2023'),
+('Max','Mythique','Féminin','Soutien','Longue','1','2019'),
+('Meg' ,'Légendaire' ,'Féminin' ,'Tank' ,'Longue' ,'0' ,'2021'),
+('Melody' ,'Mythique' ,'Féminin' ,'Assassinat' ,'Longue' ,'0' ,'2024'),
+('Mico' ,'Mythique' ,'Masculin' ,'Assassinat' ,'Moyenne' ,'1' ,'2023'),
+('Mortis','Mythique','Masculin','Assassinat','Courte','0','2017'),
+('Monsieur M.' ,'Mythique' ,'Masculin' ,'controle' ,'Longue' ,'0' ,'2020'),
+('Nani', 'Épique', 'Féminin', 'Tir d\'élite', 'Longue', 0, 2020),
+('Nita', 'Rare', 'Féminin', 'Dégâts bruts', 'Moyenne', 1, 2018),
+('Otis', 'Mythique', 'Masculin', 'controle', 'Longue', 0, 2022),
+('Pam', 'Épique', 'Féminin', 'Soutien', 'Longue', 0, 2018),
+('Pearl','Épique','Inconnu','Dégâts bruts','Longue','1','2023'),
+('Penny','Super Rare','Féminin','Artillerie','Longue','0','2018'),
+('Polly','Épique','Féminin','Tir d\'élite','Très longue','0','2017'),
+('Poco','Rare','Masculin','Soutien','Longue','0','2017'),
+('R-T' ,'Inconnu' ,'Inconnu' ,'Dégâts bruts' ,'Très longue' ,'0' ,'2023'),
+('Ricochet' ,'Super Rare' ,'Masculin' ,'Dégâts bruts' ,'Très longue' ,'0' ,'2017'),
+('Rosa', 'Rare', 'Féminin', 'Tank', 'Courte', 1, 2019),
+('Medor', 'Mythique', 'Masculin', 'Soutien', 'Longue', 0, 2021),
+('Sam', 'Épique', 'Masculin', 'Assassinat', 'Courte', 0, 2022),
+('Emeri' , 'Légendaire' , 'Masculin' , 'controle' , 'Moyenne' , 1 , 2019),
+('Shelly','Commune','Féminin','Dégâts bruts','Longue','1','2017'),
+('Spike','Légendaire','Masculin','Dégâts bruts ','Longue ','1 ','2017'),
+('Wally ','Inconnu ','Inconnu ','Artillerie ','Moyenne ','1 ','2020'),
+('Squeak ','Inconnu ','Inconnu ','controle ','Longue ','0 ','2021'),
+('Stu ', 'Épique ', 'Masculin ', 'Assassinat ', 'Longue ', '0 ', '2021'),
+('Surge ', 'Légendaire ', 'Masculin ', 'Dégâts bruts ', 'Moyenne ', '0 ', '2020'),
+('Tara ', 'Mythique ', 'Féminin ', 'Dégâts bruts ', 'Longue ', '0 ', '2017'),
+('Tick', 'Super Rare', 'Inconnu', 'Artillerie', 'Longue', 1, 2019),
+('Willow', 'Mythique', 'Féminin', 'controle', 'Longue', 0, 2023);
+
+
+-- Insertion des hypercharges dans la base de données
+
+INSERT INTO Hypercharge (hypercharge_id, link_github, Nom) VALUES
+(1, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Bull.webp' , 'Bull'),
+(2, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Colette.webp' , 'Colette'),
+(3, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Colt.webp' , 'Colt'),
+(4, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Corbac.webp' , 'Corbac'),
+(5, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Dynamike.webp' , 'Dynamike'),
+(6, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Fang.webp' , 'Fang'),
+(7, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Jacky.webp' , 'Jacky'),
+(8, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Jessie.webp' , 'Jessie'),
+(9, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Lou.webp' , 'Lou'),
+(10, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Maisie.webp' , 'Maisie'),
+(11, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Shelly.webp' , 'Shelly'),
+(12, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/hypercharge/Spike.webp' , 'Spike');
+
+
+-- Insertion des skins dans la base de données
+
+INSERT INTO Skin (skin_id, link_github, Nom) VALUES
+(1, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Bull.webp' , 'Bull'),
+(2, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Colt.webp' , 'Colt'),
+(3, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Shelly.webp' , 'Shelly'),
+(4, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Brock.webp' , 'Brock'),
+(5, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Buzz.webp' , 'Buzz'),
+(6, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Djinn.webp' , 'Djinn'),
+(7, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Dynamike.webp' , 'Dynamike'),
+(8, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/El costo.webp' , 'El costo'),
+(9, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Fang.webp' , 'Fang'),
+(10, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Medor.webp' , 'Medor'),
+(11, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Poco.webp' , 'Poco'),
+(12, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Sam.webp' , 'Sam'),
+(13, 'https://raw.githubusercontent.com/warddiablo/Projet_GreenIT/refs/heads/main/image/skin/Surge.webp' , 'Surge');
+
+*/
+
 const users = [
     {nom: "Garnier", prenom: "Tristan", email: "tristan.garnier@gmail.com"},
     {nom: "Porot", prenom: "Nicolas", email: "nicolas.porot@gmail.com"},
@@ -242,7 +395,7 @@ function submitGuess() {
         });
         resultContainer.insertBefore(valueRow, resultContainer.firstChild);
         if (brawler.name === selectedBrawler.name) {
-            document.getElementById('search_input').disabled = true;
+            document.getElementById('search_input').disabled = 1;
             document.getElementById('search_input').placeholder = "Brawler trouvé !";
             document.getElementById('recommencer_button').style.display = 'block';
         }
