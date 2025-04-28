@@ -1,47 +1,93 @@
-<!DOCTYPE html> <!-- Version 5 de HTML-->
+<!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Page Admin - Brawldle Stars</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../java/brawler_script.js" defer></script> <!-- Inclure le fichier JavaScript -->
-    </head>
-    <body>
-        
-        <h2 id="title_text">
-            Page ADMIN 
-        </h2>
-        <nav>
-            <a href="../index.html"><img src="../image/logo_bs.webp" alt="Accueil" id="accueil"> </a>
-        </nav>
-        <div class="users">
-            <table class="all_users_table">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody id="users_container">
-                    <!-- Les Utilisateurs -->
-                </tbody>
-            </table>
-        </div>
-        <script>
-            window.onload = function() {
-                displayUsers();
-            };
-        </script>
-        <br/><br/><br/><br/>
-        <footer>
-            <p>©️2025 - Nicolas POROT - Tristan Garnier - Alexandre GUÉNÉGAN - Raphaël SOAVE</p>
-            <p>Tous droits réservés.</p>
-            <nav>
-                <a href="./apropos.html">A propos de nous</a> |
-                <a href="https://supercell.com/en/games/brawlstars/">A propos du jeu</a>
-            </nav>
-        </footer>
-    </body>
+<head>
+    <title>Page Admin - Brawldle Stars</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h2 id="title_text">
+    Page ADMIN
+</h2>
+
+<nav>
+    <a href="../index.html"><img src="../image/logo_bs.webp" alt="Accueil" id="accueil"></a>
+</nav>
+
+<div class="users">
+    <table class="all_users_table">
+        <thead>
+            <tr>
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
+                <th>Action</th> <!-- nouvelle colonne -->
+            </tr>
+        </thead>
+        <tbody id="users_container">
+            <!-- Utilisateurs affichés ici -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+// URL de ton backend
+const backendUrl = 'http://localhost:3000'; // change si nécessaire
+
+window.onload = function() {
+    displayUsers();
+};
+
+function displayUsers() {
+    fetch(`${backendUrl}/users`)
+        .then(response => response.json())
+        .then(users => {
+            const usersContainer = document.getElementById('users_container');
+            usersContainer.innerHTML = '';
+
+            users.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${user.username}</td>
+                    <td>${user.email}</td>
+                    <td><button onclick="deleteUser(${user.id})" style="background:none;border:none;font-size:20px;color:red;cursor:pointer;">❌</button></td>
+                `;
+                usersContainer.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des utilisateurs :', error);
+        });
+}
+
+function deleteUser(userId) {
+    if (!confirm('Êtes-vous sûr de vouloir supprimer cet utilisateur ?')) return;
+
+    fetch(`${backendUrl}/users/${userId}`, {
+        method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        displayUsers(); // Recharge la liste après suppression
+    })
+    .catch(error => {
+        console.error('Erreur lors de la suppression de l\'utilisateur :', error);
+    });
+}
+</script>
+
+<br/><br/><br/><br/>
+
+<footer>
+    <p>©️2025 - Nicolas POROT - Tristan Garnier - Alexandre GUÉNÉGAN - Raphaël SOAVE</p>
+    <p>Tous droits réservés.</p>
+    <nav>
+        <a href="./apropos.html">A propos de nous</a> |
+        <a href="https://supercell.com/en/games/brawlstars/">A propos du jeu</a>
+    </nav>
+</footer>
+
+</body>
 </html>

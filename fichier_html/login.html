@@ -6,7 +6,7 @@
     <title>Connexion / Inscription - Brawldle Stars</title>
     <link rel="stylesheet" href="../css/style.css">
     <script>
-        const backendUrl = 'https://ton-backend.vercel.app'; // Remplace ici par ton URL backend
+        const backendUrl = 'http://localhost:3000';
         
         document.addEventListener('DOMContentLoaded', () => {
         
@@ -14,8 +14,7 @@
             document.querySelector('.login-register-container form:nth-of-type(2)').addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const form = e.target;
-                const nom = form.querySelector('input[placeholder="Nom"]').value;
-                const prenom = form.querySelector('input[placeholder="Prénom"]').value;
+                const username = form.querySelector('input[placeholder="Nom d\'utilisateur"]').value;
                 const email = form.querySelector('input[placeholder="Email"]').value;
                 const password = form.querySelector('input[placeholder="Mot de passe"]').value;
         
@@ -23,7 +22,7 @@
                     const response = await fetch(`${backendUrl}/register`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ nom, prenom, email, password })
+                        body: JSON.stringify({ username, email, password })
                     });
                     const data = await response.json();
                     alert(data.message);
@@ -48,7 +47,7 @@
                     });
                     const data = await response.json();
                     if (response.ok) {
-                        alert(`Bienvenue ${data.user.prenom} !`);
+                        alert(`Bienvenue ${data.user.username} !`);
                         // Redirection possible :
                         // window.location.href = "/fichier_html/admin.html";
                     } else {
@@ -62,6 +61,7 @@
         
         });
         </script>
+        
         
         
 </head>
@@ -80,8 +80,7 @@
 
         <h2>Inscription</h2>
         <form action="#" method="post">
-            <input type="text" placeholder="Nom" required>
-            <input type="text" placeholder="Prénom" required>
+            <input type="text" placeholder="Nom d'utilisateur" required>
             <input type="email" placeholder="Email" required>
             <input type="password" placeholder="Mot de passe" required>
             <button type="submit">S'inscrire</button>
