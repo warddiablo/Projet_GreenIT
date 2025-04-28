@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription - Brawldle Stars</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        const backendUrl = 'https://ton-backend.vercel.app'; // Remplace ici par ton URL backend
+        
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            // Gestion Inscription
+            document.querySelector('.login-register-container form:nth-of-type(2)').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const nom = form.querySelector('input[placeholder="Nom"]').value;
+                const prenom = form.querySelector('input[placeholder="Prénom"]').value;
+                const email = form.querySelector('input[placeholder="Email"]').value;
+                const password = form.querySelector('input[placeholder="Mot de passe"]').value;
+        
+                try {
+                    const response = await fetch(`${backendUrl}/register`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ nom, prenom, email, password })
+                    });
+                    const data = await response.json();
+                    alert(data.message);
+                } catch (error) {
+                    console.error(error);
+                    alert('Erreur lors de l\'inscription');
+                }
+            });
+        
+            // Gestion Connexion
+            document.querySelector('.login-register-container form:nth-of-type(1)').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const email = form.querySelector('input[placeholder="Email"]').value;
+                const password = form.querySelector('input[placeholder="Mot de passe"]').value;
+        
+                try {
+                    const response = await fetch(`${backendUrl}/login`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, password })
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        alert(`Bienvenue ${data.user.prenom} !`);
+                        // Redirection possible :
+                        // window.location.href = "/fichier_html/admin.html";
+                    } else {
+                        alert(data.message);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert('Erreur lors de la connexion');
+                }
+            });
+        
+        });
+        </script>
+        
+        
+</head>
+<body>
+    <a href="../index.html"><img src="../image/logo_bs.webp" alt="Accueil" id="accueil" style="margin-bottom: 2rem;"></a>
+
+    <div class="login-register-container">
+        <h2>Connexion</h2>
+        <form action="#" method="post">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <hr style="margin: 2rem 0;">
+
+        <h2>Inscription</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Nom" required>
+            <input type="text" placeholder="Prénom" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+
+    <footer style="margin-top: 3rem; text-align: center;">
+        <p>©️2025 - Nicolas POROT - Tristan Garnier - Alexandre GUÉNÉGAN - Raphaël SOAVE</p>
+        <p>Tous droits réservés.</p>
+        <nav>
+            <a href="./apropos.html">A propos de nous</a> |
+            <a href="https://supercell.com/en/games/brawlstars/">A propos du jeu</a>
+        </nav>
+    </footer>
+</body>
+</html>
